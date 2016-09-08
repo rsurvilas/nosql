@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
-public class App implements CommandLineRunner {
+public class App {
     @Autowired
     private NoteRepository repository;
 
@@ -20,7 +20,7 @@ public class App implements CommandLineRunner {
         SpringApplication.run(App.class, args);
     }
 
-    @Override
+/*    @Override
     public void run(String... strings) throws Exception {
         repository.deleteAll();
 
@@ -46,5 +46,5 @@ public class App implements CommandLineRunner {
         for (Note note : repository.findByText("TestText")) {
             System.out.println(note);
         }
-    }
+    }*/
 }
