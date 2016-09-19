@@ -4,7 +4,9 @@
     <meta charset="UTF-8"/>
     <title>Index</title>
 </head>
-<body>
-<p>Go <a href="/home">home</a></p>
+    <form method="get" action="/home">
+        Go
+        <input name="name" type="text" placeholder="Vardas" required minlength="3" pattern="[A-Z][A-Za-z]*"/>
+    </form>
 </body>
 </html>
