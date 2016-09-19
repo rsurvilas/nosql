@@ -23,4 +23,6 @@ public interface NoteRepository extends MongoRepository<Note, String> {
      * @return A list of Notes that are found by given text.
      */
     List<Note> findByText(String text);
+
+
 }
