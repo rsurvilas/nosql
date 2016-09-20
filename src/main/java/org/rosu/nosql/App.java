@@ -2,6 +2,7 @@ package org.rosu.nosql;
 
 import org.rosu.nosql.entity.Note;
 import org.rosu.nosql.repository.NoteRepository;
+import org.rosu.nosql.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App implements CommandLineRunner {
     @Autowired
     private NoteRepository repository;
+    @Autowired
+    private PersonRepository repositoryP;
 
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
@@ -23,6 +26,7 @@ public class App implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         repository.deleteAll();
+        repositoryP.deleteAll();
 
         // save a couple of notes
         repository.save(new Note("foo", "TestText"));

@@ -6,8 +6,22 @@
 </head>
 <body>
 <!--/*@thymesVar id="name" type="java.lang.String"*/-->
-<p th:text="'Hello, ' + ${name} + '!'" />
+<p th:text="'Hello, ' + ${helloName} + '!'"/>
 <a href="/">Kartojam</a>
+<br/>
+<br/>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Vardas</th>
+        <th>Pavarde</th>
+    </tr>
+    <tr th:each="vardas : ${vardai}">
+        <td th:text="${vardas.id}">ID ...</td>
+        <td th:text="${vardas.name}">Vardas ...</td>
+        <td th:text="${vardas.surname}">Labai mandra pavarde ...</td>
+    </tr>
+</table>
 
 </body>
 </html>
